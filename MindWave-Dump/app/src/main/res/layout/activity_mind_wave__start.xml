@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/AbsoluteLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ff000000"
+    android:orientation="vertical">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:layout_marginTop="150dp"
+        android:background="@color/bg_btns">
+
+        <Button
+            android:id="@+id/btn_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:gravity="center_vertical|center_horizontal|center"
+            android:text="Start"
+            android:textColor="#000000"
+            android:textSize="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_selectdevice"
+            app:layout_constraintEnd_toStartOf="@+id/btn_selectdevice"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/btn_selectdevice" />
+
+        <Button
+            android:id="@+id/btn_stop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="Stop"
+            android:textColor="#000000"
+            android:textSize="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_selectdevice"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btn_selectdevice"
+            app:layout_constraintTop_toTopOf="@+id/btn_selectdevice" />
+
+        <Button
+            android:id="@+id/btn_selectdevice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="Device"
+            android:textColor="#000000"
+            android:textSize="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.726" />
+
+        <EditText
+            android:id="@+id/IP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:ems="10"
+            android:inputType="text"
+            android:text="192.168.43.51"
+            android:textColor="#ffffff"
+            app:layout_constraintBottom_toTopOf="@+id/btn_selectdevice"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.501"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="IP :"
+            android:textColor="#ffffff"
+            app:layout_constraintBottom_toBottomOf="@+id/IP"
+            app:layout_constraintEnd_toStartOf="@+id/IP"
+            app:layout_constraintTop_toTopOf="@+id/IP" />
+    </android.support.constraint.ConstraintLayout>
+
+    <TableLayout
+        android:id="@+id/tableLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginRight="0dp"
+        android:orientation="horizontal"
+        android:padding="10dp"
+
+        android:stretchColumns="*">
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_ps_lable"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Signal"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#ffffffff"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/tv_ps"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/tv_ps_lable"
+                android:text="00"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#ffffffff"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/tv_attention_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Atte."
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#ffffffff"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/tv_attention"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/tv_r2r_label"
+                android:text="00"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#ffffffff"
+                android:textSize="20dp" />
+
+
+            <TextView
+                android:id="@+id/tv_meditation_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Medi."
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#ffffffff"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/tv_meditation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#ffffffff"
+                android:textSize="20dp" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_delta_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Delta"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#ffffffff"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/tv_delta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#ffffffff"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/tv_theta_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Theta"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#ffffffff"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/tv_theta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#ffffffff"
+                android:textSize="20dp" />
+
+
+            <TextView
+                android:id="@+id/tv_lowalpha_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="LAlp."
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#ffffffff"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/tv_lowalpha"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#ffffffff"
+                android:textSize="20dp" />
+
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_highalpha_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="HAlp."
+                android:textColor="#ffffffff"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/tv_highalpha"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#ffffffff"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/tv_lowbeta_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="LBeta"
+                android:textColor="#ffffffff"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/tv_lowbeta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#ffffffff"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/tv_highbeta_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="HBeta"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#ffffffff"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/tv_highbeta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#ffffffff"
+                android:textSize="20dp" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/tableLayout1">
+
+            <TextView
+                android:id="@+id/tv_lowgamma_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="LGam."
+                android:textColor="#ffffffff"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/tv_lowgamma"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#ffffffff"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/tv_middlegamma_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MGam."
+                android:textColor="#ffffffff"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/tv_middlegamma"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#ffffffff"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/tv_badpacket_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="BadPack"
+                android:textColor="#ffffffff"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/tv_badpacket"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#ffffffff"
+                android:textSize="20dp" />
+
+
+        </TableRow>
+    </TableLayout>
+
+    <!-- drawing with view.  -->
+
+
+    <!--  drawing with achart
+   	<LinearLayout
+    	android:id="@+id/wave_layout"
+
+        android:layout_width="@dimen/lin_width"
+        android:layout_height="@dimen/lin_height"
+        android:layout_below="@+id/tableLayout1"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:orientation="vertical">
+ 	</LinearLayout>
+ 	-->
+</RelativeLayout>
